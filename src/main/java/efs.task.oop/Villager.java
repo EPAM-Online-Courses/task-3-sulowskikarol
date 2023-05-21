@@ -1,7 +1,7 @@
 package efs.task.oop;
 public class Villager {
-    private String name;
-    private int age;
+    protected String name;
+    protected int age;
 
     public Villager(String name, int age) {
         this.name = name;
