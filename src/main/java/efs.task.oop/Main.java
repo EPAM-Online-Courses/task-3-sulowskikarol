@@ -15,5 +15,31 @@ public class Main {
         deckardCain.sayHello();
         warriv.sayHello();
         flawia.sayHello();
+
+        Object objectDeckardCain = deckardCain;
+        Object objectAkara = akara;
+
+        while (Monsters.getMonstersHealth() > 0) {
+            if (Monsters.andariel.getHealth() > 0) {
+                fight(kashya, Monsters.andariel);
+                fight(gheed, Monsters.andariel);
+                fight(warriv, Monsters.andariel);
+                fight(flawia, Monsters.andariel);
+            }
+            if (Monsters.blacksmith.getHealth() > 0) {
+                fight(kashya, Monsters.andariel);
+                fight(gheed, Monsters.andariel);
+                fight(warriv, Monsters.andariel);
+                fight(flawia, Monsters.andariel);
+            }
+        }
+        System.out.println("Obozowisko ocalone!");
+    }
+
+    public static void fight(Villager villager, Monster monster) {
+        System.out.println("Potwory posiadaja jeszcze " + Monsters.getMonstersHealth() + " punkty zycia");
+        System.out.println("Aktualnie walczacy osadnik to " + villager.name);
+        villager.attack(monster);
+        monster.attack(villager);
     }
 }
