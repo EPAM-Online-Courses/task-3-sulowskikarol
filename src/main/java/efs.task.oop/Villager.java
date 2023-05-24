@@ -18,11 +18,10 @@ public class Villager implements Fighter {
     }
 
     public void takeHit(int damage) {
-        if (health > damage) {
-            health -= damage;
-        }
-        else {
-            health = 0;
-        }
+        health -= damage;
+    }
+
+    public int getHealth() {
+        return health;
     }
 }
